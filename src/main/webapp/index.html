@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>简单的 SSM 框架</title>
+</head>
+
+<script>
+    function selectUser(id) {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById("test").innerHTML = xmlhttp.responseText;
+            }
+        }
+        xmlhttp.open("POST", "user/showUser.do", true);
+        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlhttp.send("id=" + id);
+    }
+</script>
+
+<body>
+<p id="test">请点击查询!</p>
+<button type="button1" onclick="selectUser(1)">onclick1</button>
+<button type="button2" onclick="selectUser(2)">onclick2</button>
+<button type="button3" onclick="selectUser(3)">onclick3</button>
+<button type="button4" onclick="selectUser(4)">onclick4</button>
+</body>
+
+</html>
