@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
     @RequestMapping("/user")
     public class UserController {
         @Resource
-        //依赖注入
+        //依赖注入@Autowired
         private IUserService userService;
 
         @RequestMapping("/showUser.do")
